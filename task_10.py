@@ -4,5 +4,22 @@
 # чтобы все монетки были повернуты вверх одной и той же стороной.
 # Выведите минимальное количество монет, которые нужно перевернуть
 
+TAIL = 0
+#HEAD = 1
 
-coin_array = []
+coins_array = [0, 1, 0, 1, 1, 1, 0]#, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1]
+
+total_tails = 0
+total_heads = 0
+
+for i in coins_array:
+    if coins_array[i] == TAIL:
+        total_tails += 1
+    else:
+        total_heads += 1
+
+if total_tails <= total_heads:
+    total_min = total_tails
+else:
+    total_min = total_heads
+print(f'Чтобы все монеты стали одинаковыми, необходимо перевернуть монет: {total_min}')
